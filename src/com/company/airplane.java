@@ -7,6 +7,11 @@ public class airplane {
     int timeOffDeparture;
     int timeOffLanding;
 
+    public airplane(int airplaneNumber, int timeOffLanding) {
+        this.airplaneNumber = airplaneNumber;
+        this.timeOffLanding = timeOffLanding;
+    }
+
     public int getAirplaneNumber() {
         return airplaneNumber;
     }
