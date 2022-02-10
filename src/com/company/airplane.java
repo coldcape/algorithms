@@ -2,11 +2,12 @@ package com.company;
 
 public class airplane {
 
-    //
+    // Nødvendige variabler for flyene
     int airplaneNumber;
     int timeOffDeparture;
     int timeOffLanding;
 
+    // Constructor
     public airplane(int airplaneNumber, int timeOffLanding) {
         this.airplaneNumber = airplaneNumber;
         this.timeOffLanding = timeOffLanding;

@@ -103,7 +103,22 @@ public class Main {
 
         }
 
+        // Logikk for prosent og gjennomsnitt beregninger
+        float freetimePercent = (((float) timeAirportUnused / InputTimeUnits) * 100);
+        System.out.println("Prosent ledig tid " + freetimePercent + "%");
+        int sumWaitingTimeLanding = 0;
+        for (Integer waitingTime : waitingTimes) {
+            sumWaitingTimeLanding += waitingTime;
+        }
+        float averageWaitLanding = (float)sumWaitingTimeLanding / waitingTimes.size();
 
+        for (Integer waitingTime : waitingTimes) {
+            sumWaitingTimeLanding += waitingTime;
+        }
+
+        float averageWaitTakeOffs = (float)sumWaitingTimeLanding / waitingTimes.size();
+
+        // Printouts
         System.out.println("Simuleringen ferdig etter " + InputTimeUnits + " tidsenheter");
         System.out.println("Totalt antall fly behandlet " + numberOffAirPlanesProcessed );
         System.out.println("Antall fly landet " + numberOffAirPlanesLanded);
@@ -111,14 +126,8 @@ public class Main {
         System.out.println("Antall fly avvist " + airplanesRejected);
         System.out.println("Antall fly klare for landing " + landingQ.size());
         System.out.println("Antalle fly klare til å ta av " + takeOffQ.size());
-        float freetimePercent = (((float) timeAirportUnused / InputTimeUnits) * 100);
-        System.out.println("Prosent ledig tid " + freetimePercent + "%");
-        int sumWaitingTimeLanding = 0;
-        for (int i = 0; i < waitingTimes.size(); i++){
-           sumWaitingTimeLanding += waitingTimes[i];
-        }
-        float averageWaitLanding = sumWaitingTimeLanding / waitingTimes.size();
-
+        System.out.println("Gj.snitt. ventetid, landing " + averageWaitLanding);
+        System.out.println("Gj.snitt. ventetid, landing " + averageWaitTakeOffs);
 
 
     }
